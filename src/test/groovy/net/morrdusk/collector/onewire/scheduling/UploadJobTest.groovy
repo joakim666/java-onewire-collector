@@ -9,7 +9,6 @@ import net.morrdusk.collector.onewire.db.ReadingsTransferStorage
 import net.morrdusk.collector.onewire.domain.CounterReading
 import net.morrdusk.collector.onewire.domain.Reading
 import net.morrdusk.collector.onewire.domain.TemperatureReading
-import org.junit.Ignore
 import org.quartz.JobExecutionContext
 import static org.mockito.Mockito.*
 
@@ -19,8 +18,7 @@ class UploadJobTest extends GroovyTestCase {
     UploadJob uploadJob
     MockHttpTransport httpTransport
 
-    @Ignore
-    void testExecuteSuccessful() {
+    void executeSuccessful() {
         def context = mock(JobExecutionContext.class)
         mockedTransferStorage = mock(ReadingsTransferStorage.class)
         def dateTime = new DateTime(new Date(), TimeZone.getDefault())
@@ -53,8 +51,7 @@ class UploadJobTest extends GroovyTestCase {
         verify(mockedTransferStorage).uploadedSuccessfully();
     }
 
-    @Ignore
-    void testExecuteFail() {
+    void executeFail() {
         def context = mock(JobExecutionContext.class)
         mockedTransferStorage = mock(ReadingsTransferStorage.class)
         def dateTime = new DateTime(new Date(), TimeZone.getDefault())
@@ -87,8 +84,7 @@ class UploadJobTest extends GroovyTestCase {
         verify(mockedTransferStorage, never()).uploadedSuccessfully();
     }
 
-    @Ignore
-    void testUpload() {
+    void upload() {
         mockedTransferStorage = mock(ReadingsTransferStorage.class)
 
         // Enqueue response
