@@ -1,7 +1,6 @@
 package net.morrdusk.collector.onewire.readers;
 
 import com.google.common.io.Files;
-import org.apache.ivy.core.retrieve.RetrieveEngineSettings;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
