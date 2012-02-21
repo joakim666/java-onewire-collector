@@ -4,8 +4,6 @@ import com.google.api.client.util.DateTime;
 import com.google.api.client.util.Key;
 
 import java.io.Serializable;
-import java.util.Calendar;
-import java.util.Date;
 
 public abstract class Reading implements Serializable {
     @Key

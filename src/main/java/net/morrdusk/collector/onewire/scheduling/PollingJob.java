@@ -1,25 +1,17 @@
 package net.morrdusk.collector.onewire.scheduling;
 
 import com.google.api.client.util.DateTime;
-import com.google.common.collect.ImmutableSet;
-import com.google.common.io.Files;
 import com.google.inject.Inject;
 import net.morrdusk.collector.onewire.db.ReadingKey;
 import net.morrdusk.collector.onewire.db.ReadingsView;
-import net.morrdusk.collector.onewire.domain.CounterReading;
 import net.morrdusk.collector.onewire.domain.Reading;
 import net.morrdusk.collector.onewire.readers.SensorReader;
 import org.quartz.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import sun.rmi.rmic.iiop.DirectoryLoader;
 
 import java.io.File;
-import java.io.IOException;
-import java.nio.charset.Charset;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 public class PollingJob implements Job {

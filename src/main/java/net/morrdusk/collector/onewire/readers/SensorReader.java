@@ -10,12 +10,11 @@ import net.morrdusk.collector.onewire.domain.Reading;
 import net.morrdusk.collector.onewire.domain.TemperatureReading;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import sun.util.LocaleServiceProviderPool;
 
-import javax.xml.ws.handler.LogicalHandler;
 import java.io.File;
 import java.math.BigDecimal;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SensorReader {
     private static final Logger LOG = LoggerFactory.getLogger(SensorReader.class);

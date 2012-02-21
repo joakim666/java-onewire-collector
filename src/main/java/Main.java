@@ -2,14 +2,11 @@ import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.google.inject.name.Names;
-import com.sun.servicetag.SystemEnvironment;
 import net.morrdusk.collector.onewire.CollectorModule;
 import net.morrdusk.collector.onewire.db.ReadingsDb;
 import net.morrdusk.collector.onewire.scheduling.PollingJobActivator;
 import net.morrdusk.collector.onewire.scheduling.Quartz;
 import net.morrdusk.collector.onewire.scheduling.UploadJobActivator;
-
-import java.io.File;
 
 public class Main {
 
