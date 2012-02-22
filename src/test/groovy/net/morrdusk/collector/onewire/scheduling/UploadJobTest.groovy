@@ -18,6 +18,9 @@ class UploadJobTest extends GroovyTestCase {
     UploadJob uploadJob
     MockHttpTransport httpTransport
 
+    void testDummy() {
+    }
+
     void executeSuccessful() {
         def context = mock(JobExecutionContext.class)
         mockedTransferStorage = mock(ReadingsTransferStorage.class)
