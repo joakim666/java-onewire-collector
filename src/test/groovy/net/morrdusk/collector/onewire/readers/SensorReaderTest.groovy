@@ -56,16 +56,16 @@ class SensorReaderTest extends GroovyTestCase {
         def readings = sensorReader.readAll(new File("src/test/resources/test-sensors"), date)
         assertEquals(3, readings.size())
 
-        def readings0 = readings.get(0)
+        def readings0 = readings.find { it.getDeviceId().equals("91B80D000000") }
         assertEquals("91B80D000000", readings0.getDeviceId())
         assertEquals(21191234, ((CounterReading) readings0).getCounterA())
         assertEquals(1, ((CounterReading) readings0).getCounterB())
 
-        def readings1 = readings.get(1)
+        def readings1 = readings.find { it.getDeviceId().equals("2D3011010000") }
         assertEquals("2D3011010000", readings1.getDeviceId())
         assertEquals(new BigDecimal("24.7563"), ((HumidityReading) readings1).getHumidity())
 
-        def readings2 = readings.get(2)
+        def readings2 = readings.find { it.getDeviceId().equals("3E5D70020000") }
         assertEquals("3E5D70020000", readings2.getDeviceId())
         assertEquals(new BigDecimal("-2.25"), ((TemperatureReading) readings2).getTemperature())
     }
