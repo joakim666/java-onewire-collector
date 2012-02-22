@@ -1,6 +1,16 @@
 apply plugin: 'java'
 apply plugin: 'groovy'
 apply plugin: 'idea'
+apply plugin:com.smokejumperit.gradle.OneJarPlugin
+
+buildscript {
+    repositories {
+        mavenRepo urls:'http://repo.smokejumperit.com'
+    }
+    dependencies {
+        classpath 'com.smokejumperit:gradle-plugins:0.8.2'
+    }
+}
 
 repositories {
     mavenCentral()
@@ -21,4 +31,8 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.10'
     testCompile group: 'org.mockito', name: 'mockito-all', version: '1.9.0'
     testCompile name: 'mockwebserver' // http://code.google.com/p/mockwebserver/
+}
+
+jar {
+    manifest { attributes 'Main-Class': 'Main' }
 }
