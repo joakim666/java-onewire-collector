@@ -1,2 +1,6 @@
 .gradle/
 build/
+java-onewire-collector.iml
+java-onewire-collector.ipr
+java-onewire-collector.iws
+out
