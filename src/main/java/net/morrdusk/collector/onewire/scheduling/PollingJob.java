@@ -2,6 +2,7 @@ package net.morrdusk.collector.onewire.scheduling;
 
 import com.google.api.client.util.DateTime;
 import com.google.inject.Inject;
+import com.google.inject.name.Named;
 import net.morrdusk.collector.onewire.db.ReadingKey;
 import net.morrdusk.collector.onewire.db.ReadingsView;
 import net.morrdusk.collector.onewire.domain.Reading;
@@ -20,11 +21,13 @@ public class PollingJob implements Job {
 
     private final SensorReader sensorReader;
     private final ReadingsView dbView;
+    private String deviceDirectory;
 
     @Inject
-    public PollingJob(SensorReader sensorReader, ReadingsView dbView) {
+    public PollingJob(SensorReader sensorReader, ReadingsView dbView, @Named("DEVICE_DIRECTORY") String deviceDirectory) {
         this.sensorReader = sensorReader;
         this.dbView = dbView;
+        this.deviceDirectory = deviceDirectory;
     }
 
     public void execute(JobExecutionContext context) throws JobExecutionException {
@@ -35,7 +38,7 @@ public class PollingJob implements Job {
 
         LOG.debug(jobKey + " executing at " + readingDate);
 
-        List<Reading> readings = sensorReader.readAll(new File("/var/1-wire/uncached"), readingDate);
+        List<Reading> readings = sensorReader.readAll(new File(deviceDirectory), readingDate);
 
         save(readings);
 

@@ -22,7 +22,7 @@ class PollingJobTest extends GroovyTestCase {
     void setUp() {
         mockedSensorReader = mock(SensorReader.class)
         mockedReadingsView = mock(ReadingsView.class)
-        pollingJob = new PollingJob(mockedSensorReader, mockedReadingsView)
+        pollingJob = new PollingJob(mockedSensorReader, mockedReadingsView, "/tmp")
     }
 
     void testExecute() {

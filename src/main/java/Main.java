@@ -27,6 +27,9 @@ public class Main {
                 bind(String.class)
                         .annotatedWith(Names.named("URL"))
                         .toInstance("http://localhost/sensor-web");
+                bind(String.class)
+                        .annotatedWith(Names.named("DEVICE_DIRECTORY"))
+                        .toInstance("/var/1-wire/uncached");
             }
         });
         
