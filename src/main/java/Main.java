@@ -24,6 +24,9 @@ public class Main {
                 bind(String.class)
                         .annotatedWith(Names.named("API_KEY"))
                         .toInstance(args[0]);
+                bind(String.class)
+                        .annotatedWith(Names.named("URL"))
+                        .toInstance("http://localhost/sensor-web");
             }
         });
         
