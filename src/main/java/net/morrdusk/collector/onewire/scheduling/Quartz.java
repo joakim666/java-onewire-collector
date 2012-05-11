@@ -1,10 +1,12 @@
 package net.morrdusk.collector.onewire.scheduling;
 
 import com.google.inject.Inject;
+import com.google.inject.Singleton;
 import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
 import org.quartz.SchedulerFactory;
 
+@Singleton
 public class Quartz {
 
     private final Scheduler scheduler;

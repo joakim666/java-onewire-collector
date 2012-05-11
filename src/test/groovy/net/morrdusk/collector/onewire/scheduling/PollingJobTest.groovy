@@ -50,8 +50,8 @@ class PollingJobTest extends GroovyTestCase {
         pollingJob.execute(context)
         
         verify(mockedSensorReader).readAll(anyObject(), anyObject())
-        verify(mockedReadingsView).save(new ReadingKey(reading1.getDeviceId() + date.getValue()), reading1)
-        verify(mockedReadingsView).save(new ReadingKey(reading2.getDeviceId() + date.getValue()), reading2)
+        verify(mockedReadingsView).save(new ReadingKey(reading1.getDeviceName() + date.getValue()), reading1)
+        verify(mockedReadingsView).save(new ReadingKey(reading2.getDeviceName() + date.getValue()), reading2)
 
         verify(scheduler).triggerJob(new JobKey("uploadJob"))
     }

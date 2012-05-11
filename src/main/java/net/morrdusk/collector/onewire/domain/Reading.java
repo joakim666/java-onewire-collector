@@ -9,10 +9,10 @@ public abstract class Reading implements Serializable {
     @Key
     private DateTime dateTime;
     @Key
-    private String deviceId;
+    private String deviceName;
 
-    public Reading(String deviceId) {
-        this.deviceId = deviceId;
+    public Reading(String deviceName) {
+        this.deviceName = deviceName;
     }
 
     public DateTime getDateTime() {
@@ -23,19 +23,19 @@ public abstract class Reading implements Serializable {
         this.dateTime = dateTime;
     }
 
-    public String getDeviceId() {
-        return deviceId;
+    public String getDeviceName() {
+        return deviceName;
     }
 
-    public void setDeviceId(String deviceId) {
-        this.deviceId = deviceId;
+    public void setDeviceName(String deviceName) {
+        this.deviceName = deviceName;
     }
 
     @Override
     public String toString() {
         return "Reading{" +
                 "dateTime=" + dateTime +
-                ", deviceId='" + deviceId + '\'' +
+                ", deviceName='" + deviceName + '\'' +
                 '}';
     }
 }

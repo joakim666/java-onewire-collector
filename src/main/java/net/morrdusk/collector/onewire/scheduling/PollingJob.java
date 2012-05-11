@@ -48,7 +48,7 @@ public class PollingJob implements Job {
 
     protected void save(List<Reading> readings) {
         for (Reading reading : readings) {
-            dbView.save(makeKey(reading.getDeviceId(), reading.getDateTime()), reading);
+            dbView.save(makeKey(reading.getDeviceName(), reading.getDateTime()), reading);
         }
     }
 

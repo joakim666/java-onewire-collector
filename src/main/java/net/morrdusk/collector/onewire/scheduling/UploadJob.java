@@ -31,7 +31,7 @@ public class UploadJob implements Job {
     private ReadingsTransferStorage transferStorage;
 
     @Inject
-    public UploadJob(String url, @Named("API_KEY") String apiKey, ReadingsTransferStorage transferStorage) {
+    public UploadJob(@Named("URL") String url, @Named("API_KEY") String apiKey, ReadingsTransferStorage transferStorage) {
         this.url = url;
         this.transferStorage = transferStorage;
         this.apiKey = apiKey;

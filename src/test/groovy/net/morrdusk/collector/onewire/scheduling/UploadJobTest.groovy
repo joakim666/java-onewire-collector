@@ -49,7 +49,7 @@ class UploadJobTest extends GroovyTestCase {
         assertEquals("POST /upload HTTP/1.1", request.getRequestLine())
         assertTrue(request.getHeaders().contains("Content-Type: application/json"))
         assertTrue(request.getHeaders().contains("X-Api-Key: foo_key"))
-        assertEquals("[{\"counterA\":1,\"counterB\":2,\"dateTime\":" + expectedDate + ",\"deviceId\":\"C1\"},{\"dateTime\":" + expectedDate + ",\"deviceId\":\"T1\",\"temperature\":12.5}]", new String(request.getBody()))
+        assertEquals("[{\"counterA\":1,\"counterB\":2,\"dateTime\":" + expectedDate + ",\"deviceName\":\"C1\"},{\"dateTime\":" + expectedDate + ",\"deviceName\":\"T1\",\"temperature\":12.5}]", new String(request.getBody()))
 
         verify(mockedTransferStorage).uploadedSuccessfully();
     }
@@ -82,7 +82,7 @@ class UploadJobTest extends GroovyTestCase {
         assertEquals("POST /upload HTTP/1.1", request.getRequestLine())
         assertTrue(request.getHeaders().contains("Content-Type: application/json"))
         assertTrue(request.getHeaders().contains("X-Api-Key: foo_key"))
-        assertEquals("[{\"counterA\":1,\"counterB\":2,\"dateTime\":" + expectedDate + ",\"deviceId\":\"C1\"},{\"dateTime\":" + expectedDate + ",\"deviceId\":\"T1\",\"temperature\":12.5}]", new String(request.getBody()))
+        assertEquals("[{\"counterA\":1,\"counterB\":2,\"dateTime\":" + expectedDate + ",\"deviceName\":\"C1\"},{\"dateTime\":" + expectedDate + ",\"deviceName\":\"T1\",\"temperature\":12.5}]", new String(request.getBody()))
 
         verify(mockedTransferStorage, never()).uploadedSuccessfully();
     }
@@ -115,7 +115,7 @@ class UploadJobTest extends GroovyTestCase {
         assertEquals("POST /upload HTTP/1.1", request.getRequestLine())
         assertTrue(request.getHeaders().contains("Content-Type: application/json"))
         assertTrue(request.getHeaders().contains("X-Api-Key: foo_key"))
-        assertEquals("[{\"counterA\":1,\"counterB\":2,\"dateTime\":" + expectedDate + ",\"deviceId\":\"C1\"},{\"dateTime\":" + expectedDate + ",\"deviceId\":\"T1\",\"temperature\":12.5}]", new String(request.getBody()))
+        assertEquals("[{\"counterA\":1,\"counterB\":2,\"dateTime\":" + expectedDate + ",\"deviceName\":\"C1\"},{\"dateTime\":" + expectedDate + ",\"deviceName\":\"T1\",\"temperature\":12.5}]", new String(request.getBody()))
     }
 
     private ArrayList<Reading> makeReadings(DateTime dateTime) {
